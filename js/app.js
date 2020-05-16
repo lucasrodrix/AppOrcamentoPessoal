@@ -73,6 +73,7 @@ function cadastrarDespesa(){
         document.getElementById('classeModalBtn').className = 'btn btn-success'
         document.getElementById('classeModalBtn').innerHTML = 'Ok'
         $('#modalRegistraDespesa').modal('show')
+        limparCampos()
     }else{
         document.getElementById('modalTitulo').innerHTML = 'Erro ao Registrar'
         document.getElementById('classeModal').className = 'modal-header text-danger'
@@ -80,6 +81,13 @@ function cadastrarDespesa(){
         document.getElementById('classeModalBtn').className = 'btn btn-danger'
         document.getElementById('classeModalBtn').innerHTML = 'Corrigir'
         $('#modalRegistraDespesa').modal('show')
+    }
+}
+
+function limparCampos(){
+    let campos = document.getElementsByClassName('form-control')
+    for (let i in campos){
+        campos[i].value = ''
     }
 }
 
